@@ -10,10 +10,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginComponent } from './login/login.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import {MatCardModule} from '@angular/material/card';
+import { RegisterComponent } from './register/register.component';
+import { RentPageComponent } from './rent-page/rent-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomePageComponent,
+    RegisterComponent,
+    RentPageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +35,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule, 
     MatButtonModule, 
     MatDividerModule, 
+    MatFormFieldModule, 
+    MatCardModule, 
+    
 
   ],
   providers: [],

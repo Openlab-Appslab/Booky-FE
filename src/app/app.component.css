@@ -1,3 +1,11 @@
-#but{
-    color: white;
+footer {
+    bottom: 0;
 }
+
+#navbar{
+    background-color: #2E4052;
+}
+
+.icons{
+    margin-left: 10%;
+} 

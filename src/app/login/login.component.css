@@ -1,0 +1,16 @@
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+#login-button {
+    width: 150px;
+    background-color: rgb(0, 128, 0);
+}
+
+#login-back {
+    background-image: linear-gradient(to right, rgba(200, 190, 190, 0), #2E4052);
+}
