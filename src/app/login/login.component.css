@@ -8,9 +8,9 @@
 
 #login-button {
     width: 150px;
-    background-color: rgb(0, 128, 0);
+    background-color: #6786aa;
 }
 
 #login-back {
-    background-image: linear-gradient(to right, rgba(200, 190, 190, 0), #2E4052);
+    background-image: linear-gradient(to right, rgba(186, 163, 163, 0.043), #6786aa);
 }

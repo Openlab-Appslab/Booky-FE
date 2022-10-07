@@ -16,26 +16,28 @@
 
     </div>
 
-	
-
     <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
 
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
+
+		<li class="nav-item"> 
+
+		</li>
 
         <li class="nav-item">
 
           <a routerLink="/home-page"  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
             <i class="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Home</span>
-			<img class="icons" src="https://img.icons8.com/ios-glyphs/25/FFFFFF/home.png"/>
+			<mat-icon class="icons">home</mat-icon>
           </a>
 
         </li>
 
         <li class="nav-item">
 
-          <a routerLink="/rent-page" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+          <a routerLink="/rent-page"  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
             <i class="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Rent</span>
-			<img class="icons" src="https://img.icons8.com/ios-glyphs/25/FFFFFF/book.png"/>
+			<img class="icons" src="https://img.icons8.com/material/24/FFFFFF/bookmark.png"/>
           </a>
 
         </li>

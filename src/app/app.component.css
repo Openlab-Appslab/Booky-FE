@@ -9,3 +9,8 @@ footer {
 .icons{
     margin-left: 10%;
 } 
+
+li {
+    text-decoration: none;
+}
+
