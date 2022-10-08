@@ -20,16 +20,9 @@ li {
 }
 
 #logo {
-    width:150px;
-    height: 40px;
-    display: block;
-    background-image: url("../assets/images/booky-logo3.png");
-    background-size:cover;
-    left:10%;
-    top:10%;
-    right:10%;
-    bottom:10%;
-    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
 }
 
 
