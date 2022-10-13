@@ -1,0 +1,18 @@
+#main{
+    margin-top: 55px;
+}
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-button {
+    width: 150px;
+    background-color: #6786aa;
+}
+
+#login-back {
+    background-image: linear-gradient(to right, rgba(186, 163, 163, 0.043), #6786aa);
+}

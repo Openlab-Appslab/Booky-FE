@@ -20,7 +20,7 @@
     <section 
         class="flex flex-col w-full h-[900px] bg-cover bg-fixed bg-center flex justify-center items-center"
         style="
-            opacity: 80%; background-color: white; background-image: url(https://images.unsplash.com/photo-1534774592507-488885376ad3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+            opacity: 90%; background-color: white; background-image: url(https://images.unsplash.com/photo-1534774592507-488885376ad3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
         ">
         <h1 class="text-white text-5xl font-semibold mt-20 mb-50">
             Welcome to booky!
@@ -52,13 +52,6 @@
                     class="text-white/90 hover:text-white">
                     Source Code
                 </a>
-                |
-                <a
-                    href="https://egoistdeveloper.github.io/my-tailwind-components/./src/templates/parallax-landing-page.html"
-                    target="_blank"
-                    class="text-white/90 hover:text-white">
-                    Full Preview
-                </a>
             </p>
         </span>
     </section>
@@ -86,16 +79,19 @@
         </div>
 
         <div class="text-center lg:text-left">
-            <a id="special2"
-                class="block visible py-4 px-8 mb-4 text-xs font-semibold tracking-wide leading-none text-white rounded cursor-pointer sm:mr-3 sm:mb-0 sm:inline-block"
-                >Let's start</a
-            >
 
-            <a
-                class="block visible py-4 px-8 text-xs font-semibold leading-none bg-white rounded border border-solid cursor-pointer sm:inline-block border-slate-200 text-slate-500"
-                >Join us</a
-            >
+            <button id="special2" routerLink="/rent-page" 
+                class="block visible py-4 px-8 mb-4 text-xs font-semibold tracking-wide leading-none text-white rounded cursor-pointer sm:mr-3 sm:mb-0 sm:inline-block">
+                Rent a book
+            </button>
+
+            <button routerLink="/login" 
+                class="block visible py-4 px-8 text-xs font-semibold leading-none bg-white rounded border border-solid cursor-pointer sm:inline-block border-slate-200 text-slate-500"> 
+                Join us
+            </button>
+
         </div>
+
     </div>
 
     <!-- Column-2 -->
