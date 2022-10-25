@@ -1,3 +1,4 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
@@ -22,4 +23,11 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should have url', () => {
+  //   const httpClient = TestBed.inject(HttpClient);
+  //   const getSpy = spyOn(httpClient, 'get').and.callThrough();
+  //   expect(getSpy).toHaveBeenCalledWith('/home-page' as any);
+  // });
+
 });

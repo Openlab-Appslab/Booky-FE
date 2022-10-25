@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {MatCardModule} from '@angular/material/card';
 import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { RentPageComponent } from './rent-page/rent-page.component';
     LoginComponent,
     HomePageComponent,
     RegisterComponent,
-    RentPageComponent
+    RentPageComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +39,8 @@ import { RentPageComponent } from './rent-page/rent-page.component';
     MatButtonModule, 
     MatDividerModule, 
     MatFormFieldModule, 
-    MatCardModule, 
-    
-
+    MatCardModule,
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

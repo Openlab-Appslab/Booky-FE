@@ -6,3 +6,34 @@
 #search-button{
     background-color: #6786aa;
 }
+
+#background{
+    padding: 15px;
+    background-color: rgba(128, 128, 128, 0.09) ;
+    border-radius: 5px;
+}
+
+#card {
+    padding: -14px;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#date{
+    flex: 0 0 50%;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#detail-btn{
+    flex: 0 0 50%;
+    background-color: #6786aa6f;
+}
+
+#icon{
+    margin-bottom: 5px;
+}
+
