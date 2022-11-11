@@ -21,6 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomePageComponent,
     RegisterComponent,
     RentPageComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

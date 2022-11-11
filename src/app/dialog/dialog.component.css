@@ -1,0 +1,46 @@
+.dialog {
+    width: 500px;
+    height: 210px;
+    border-radius: 5px;
+}
+
+.close-button {
+    color: black;
+}
+
+.close-button:hover {
+    background-color: rgba(110, 4, 110, 0.932);
+    color: white;
+}
+
+.mat-dialog-actions{
+    margin-top: -17px;
+}
+
+.input{
+    width: 400px;
+}
+
+
+.open-email {
+    border: 1px solid purple;
+}
+
+.open-email:hover {
+    background-color: rgba(110, 4, 110, 0.932);
+    color: white;
+}
+
+.send-button {
+    margin-left: 5px;
+}
+
+.send-button:hover {
+    background-color: rgba(67, 224, 122, 0.751);
+    color: white;
+    margin-left: 5px;
+}
+
+.form-group{
+    align-items: center;
+}

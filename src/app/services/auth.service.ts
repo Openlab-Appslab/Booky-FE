@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { user, loggedUser } from 'src/user';
 // import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -50,8 +51,12 @@ export class AuthService {
         }
          catch (error) {
           console.log('Error:', error);
-          //this.showFailDialog();
+          this.showFailDialog();
         }
+      }
+
+      showFailDialog(): void {
+        this.dialog.open(DialogComponent);
       }
 
 }
