@@ -13,14 +13,14 @@ export class user {
  
 } 
 
-export class loggedUser {
+export class userLogin {
   
-    username: string;
-    password: string;
-    
-   constructor(
-      username: string,
-      password: string,
-   ) {  }
- 
+   username: string;
+   password: string;
+
+  constructor(
+     username: string,
+     password: string,
+  ) {  }
+
 }

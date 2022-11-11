@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { loggedUser, user } from 'src/user';
+import { user, userLogin } from 'src/user';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   users: user[] = [];
 
-  model = new loggedUser( '', '');
+  model = new userLogin( '', '');
 
   constructor(
     private readonly loginService: AuthService,
@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loginService.login(this.model)
     console.log(this.model);
-    
   }
 
 }

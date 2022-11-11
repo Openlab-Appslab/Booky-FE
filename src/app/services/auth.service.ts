@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { user, loggedUser } from 'src/user';
+import { user, userLogin } from 'src/user';
 // import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
@@ -32,7 +32,7 @@ export class AuthService {
     //     return !!(this.cookies.get('username') && this.cookies.get('password'));
     //   }
 
-    async login(user: loggedUser){
+    async login(user: userLogin){
 
         let authString = `${user.username}:${user.password}`
     

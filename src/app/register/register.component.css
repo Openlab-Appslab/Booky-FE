@@ -2,15 +2,20 @@
     margin-top: 55px;
 }
 
-#login{
+#register{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 
-#login-button {
+#register-button {
     width: 150px;
     background-color: #6786aa;
+}
+
+#register-button:disabled {
+    background-color: #5c78988c;
 }
 
 #login-back {

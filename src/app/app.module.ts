@@ -22,6 +22,8 @@ import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { DialogComponent } from './dialog/dialog.component';
     HttpClientModule, 
     FormsModule, 
     RouterModule, 
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule, 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

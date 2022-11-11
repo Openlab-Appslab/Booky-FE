@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { user } from 'src/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  username: string = '';
+  password: string = ''; 
+  email: any = '';
+  confirmPassword: any ;
+
+  users: user[] = [];
+
+  model = new user( '', '','' );
+  
+  constructor(
+    private readonly loginService: AuthService,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    this.loginService.login(this.model)
+    console.log(this.model);
+  }
 }

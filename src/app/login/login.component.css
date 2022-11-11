@@ -3,12 +3,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
- 
+}
+
+#login-button:disabled {
+    background-color: #5c78988c;
+    color: rgba(239, 227, 227, 0.796);
+    border-color: #5c78988c ;
+    border-width: 0px;
 }
 
 #login-button {
     width: 150px;
-    background-color: #6786aa;
+
 }
 
 #login-back {
