@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,8 @@ import {MatCardModule} from '@angular/material/card';
 import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     MatFormFieldModule, 
     MatCardModule,
     HttpClientModule, 
+    FormsModule, 
+    RouterModule, 
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

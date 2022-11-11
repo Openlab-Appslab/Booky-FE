@@ -1,26 +1,26 @@
 
-// export class user {
+export class user {
   
-//     username: string;
-//     password: string;
-//     email: string;
+    username!: string;
+    password!: string;
+    email!: string;
 
-//    constructor(
-//       username: string,
-//       password: string,
-//         email: string,
-//    ) {  }
+   constructor(
+      username: string,
+      password: string,
+      email: string,
+   ) {  }
  
-// } 
+} 
 
-// export class userLogin {
+export class loggedUser {
   
-//     username: string;
-//     password: string;
+    username!: string;
+    password!: string;
     
-//    constructor(
-//       username: string,
-//       password: string,
-//    ) {  }
+   constructor(
+      username: string,
+      password: string,
+   ) {  }
  
-// }
+}

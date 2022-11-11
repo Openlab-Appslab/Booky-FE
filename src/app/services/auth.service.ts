@@ -1,61 +1,57 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { user, userLogin, userScore } from '../user';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { user, loggedUser } from 'src/user';
 // import { CookieService } from 'ngx-cookie-service';
-// import {MatDialog} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
+@Injectable({
+  providedIn: 'root'
+})
 
-//   headers = new Headers();
-//   authString: string;
-//   //userSubject = new Subject<void>();
-//   users : user[] = [];
-//   //usersScore : userScore[] = [];
-//   //skill: number;
-//   userName: string;
+export class AuthService {
 
-//   constructor(
-//     private readonly httpClient: HttpClient,
-//     //private cookies: CookieService,
-//     private dialog : MatDialog, 
-//   ) { }
+  headers = new Headers();
+  //authString: string;
+  users : user[] = [];
+  username!: string;
 
-//   getToken(): string {
-//     const authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
-//     return 'Basic ' + btoa(authString);
-//   }
+  constructor(
+    private readonly httpClient: HttpClient,
+    //private cookies: CookieService,
+    private dialog : MatDialog, 
+  ) { }
 
-//   isLoggedIn(): boolean {
-//     return !!(this.cookies.get('username') && this.cookies.get('password'));
-//   }
+    //   getToken(): string {
+    //     const authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
+    //     return 'Basic ' + btoa(authString);
+    //   }
 
-//   async login(user: userLogin){
+    //   isLoggedIn(): boolean {
+    //     return !!(this.cookies.get('username') && this.cookies.get('password'));
+    //   }
 
-//     let authString = `${user.username}:${user.password}`
+    async login(user: loggedUser){
 
-//     this.headers.set('Authorization', 'Basic ' + btoa(authString))
+        let authString = `${user.username}:${user.password}`
+    
+        this.headers.set('Authorization', 'Basic ' + btoa(authString))
+    
+        try {
+          const response = await fetch('http://localhost:8080/users', {
+            method: 'GET',
+            headers: this.headers,
+          });
+          const data_1 = await response.json();
+          //this.cookies.set('username', user.username);
+          //this.cookies.set('password', user.password );
+          window.location.href="/home" 
+    
+        }
+         catch (error) {
+          console.log('Error:', error);
+          //this.showFailDialog();
+        }
+      }
 
-//     try {
-//       const response = await fetch('http://localhost:8080/users', {
-//         method: 'GET',
-//         headers: this.headers,
-//       });
-//       const data_1 = await response.json();
-//       this.cookies.set('username', user.username);
-//       this.cookies.set('password', user.password );
-//       window.location.href="/home" 
-
-//     }
-//      catch (error) {
-//       console.log('Error:', error);
-//       //this.showFailDialog();
-//     }
-//   }
-
-  
-
-// }
+}
