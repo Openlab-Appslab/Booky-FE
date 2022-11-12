@@ -11,11 +11,21 @@
 
 #register-button {
     width: 150px;
+    border-radius: 4px;
+    border: 1px solid #6786aa;
+    color: #6786aa;
+}
+
+#register-button:hover {
+    color: white;
     background-color: #6786aa;
 }
 
 #register-button:disabled {
     background-color: #5c78988c;
+    color: rgba(239, 227, 227, 0.796);
+    border-color: #5c78988c ;
+    border-width: 0px;
 }
 
 #login-back {
