@@ -5,6 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
 
 const routes: Routes = [
   
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'rent-page', component: RentPageComponent },
   { path: 'book-detail', component: BookDetailComponent },
+  { path: 'password-change', component: PasswordChangeComponent },
 ]
 
 @NgModule({

@@ -21,7 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from './failed-login-dialog/dialog.component';
 import {MatInputModule} from '@angular/material/input';
 import { VerifyDialogComponent } from './verify-dialog/verify-dialog.component';
 import { PasswordChangeComponent } from './password-change/password-change.component';

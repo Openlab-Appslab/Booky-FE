@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { user, userLogin } from 'src/user';
 // import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+import { DialogComponent } from '../failed-login-dialog/dialog.component';
 import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component';
 
 @Injectable({
