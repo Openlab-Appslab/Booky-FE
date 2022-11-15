@@ -32,3 +32,11 @@ export class sentMail {
        email: any,
    ) {  }
 }
+
+export class resendMail {
+   email: string;
+
+   constructor(
+       email: string,
+   ) {  }
+}
