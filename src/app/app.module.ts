@@ -23,6 +23,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatInputModule} from '@angular/material/input';
+import { VerifyDialogComponent } from './verify-dialog/verify-dialog.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
 
 
 
@@ -34,7 +36,9 @@ import {MatInputModule} from '@angular/material/input';
     RegisterComponent,
     RentPageComponent,
     BookDetailComponent,
-    DialogComponent
+    DialogComponent,
+    VerifyDialogComponent,
+    PasswordChangeComponent
   ],
   imports: [
     BrowserModule,

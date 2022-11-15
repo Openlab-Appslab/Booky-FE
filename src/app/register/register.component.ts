@@ -19,14 +19,14 @@ export class RegisterComponent implements OnInit {
   model = new user( '', '','' );
   
   constructor(
-    private readonly loginService: AuthService,
+    private readonly registerService: AuthService,
   ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.loginService.login(this.model)
+    this.registerService.createUser(this.model)
     console.log(this.model);
   }
 }

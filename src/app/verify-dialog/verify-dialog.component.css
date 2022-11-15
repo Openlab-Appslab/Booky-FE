@@ -1,0 +1,22 @@
+.dialog {
+    width: 400px;
+    height: 125px;
+    border-radius: 5px;
+}
+
+.ok-button{
+    border: 1px solid purple;
+    background-color: white;
+    color: black;
+}
+
+.ok-button:hover{
+    background-color: purple;
+    color: white;
+}
+
+.gif {
+    height: 30px;
+    width: 30px;
+}
+
