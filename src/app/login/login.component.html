@@ -54,24 +54,28 @@
                             <mat-icon matSuffix>lock</mat-icon>
                         </mat-form-field>
 
+
                         <div id="service-bar" class="relative">
-                            <button id="register-button"
+
+                        <button id="register-button"
                                 routerLink="/register" 
                                 target="_blank"
                                 class="text-black/40 hover:text-black">
                                 Register here!
-                            </button>
-
+                        </button>
+    
                             |   <!-- divider -->
- 
-                            <button id="forgot-pass-button"
-                                routerLink="/password-change" 
+    
+                        <a id="forgot-pass-button"
+                                (click)="passwordChangeDialog()"
                                 target="_blank"
                                 class="text-black/40 hover:text-black">
                                 Forgot password?
-                            </button>
+                        </a>
+                            
                         </div>
 
+                      
                         <div id="login" class="relative">
                             <!-- <button id="login-button" type="submit" [disabled]="!loginForm.form.valid"
                                 class="bg-blue-500 text-white rounded-md px-2 py-1">Login</button> -->

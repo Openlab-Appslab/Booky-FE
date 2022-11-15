@@ -92,4 +92,23 @@ export class AuthService {
         this.dialog.open(VerifyDialogComponent);
       }
 
+      sendPasswordResetEmail(email: string) {
+
+        fetch('http://localhost:8080/password/forgot/' + email, {
+          method: 'GET',
+          headers: new Headers({
+            'Content-Type': "application/json; charset=utf8",
+        }),
+      })
+      .then(() => {
+        console.log('Success!');
+        //this.showPasswordDialog();
+      })
+      .catch((error) => {
+        console.error('Error:' , error);
+        alert("faileeedddd")
+      });
+  
+    } 
+
 }

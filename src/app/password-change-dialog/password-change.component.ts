@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { sentMail } from 'src/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-password-change',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PasswordChangeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+  ) { }
 
-  ngOnInit(): void {
+  email: string = '';
+
+  model = new sentMail('');
+
+  ngOnInit(): void {}
+
+  onSubmit() {
+    this.authService.sendPasswordResetEmail(this.model.email);
+    console.log(this.model.email);
   }
 
 }

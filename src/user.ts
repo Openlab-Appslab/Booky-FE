@@ -24,3 +24,11 @@ export class userLogin {
   ) {  }
 
 }
+
+export class sentMail {
+   email: any;
+
+   constructor(
+       email: any,
+   ) {  }
+}
