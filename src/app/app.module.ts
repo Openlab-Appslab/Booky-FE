@@ -24,7 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './failed-login-dialog/dialog.component';
 import {MatInputModule} from '@angular/material/input';
 import { VerifyDialogComponent } from './verify-dialog/verify-dialog.component';
-import { PasswordChangeComponent } from './password-change/password-change.component';
+import { PasswordChangeComponent } from './password-change-dialog/password-change.component';
 
 
 

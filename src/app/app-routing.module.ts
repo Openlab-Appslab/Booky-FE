@@ -5,7 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
-import { PasswordChangeComponent } from './password-change/password-change.component';
+import { PasswordChangeComponent } from './password-change-dialog/password-change.component';
 
 const routes: Routes = [
   
