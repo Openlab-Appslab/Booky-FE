@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit() {
-    this.loginService.login(this.model)
+    this.loginService.login(this.model);
     console.log(this.model);
   }
 

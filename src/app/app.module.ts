@@ -25,7 +25,7 @@ import { DialogComponent } from './failed-login-dialog/dialog.component';
 import {MatInputModule} from '@angular/material/input';
 import { VerifyDialogComponent } from './verify-dialog/verify-dialog.component';
 import { PasswordChangeComponent } from './password-change-dialog/password-change.component';
-
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -59,7 +59,7 @@ import { PasswordChangeComponent } from './password-change-dialog/password-chang
     MatInputModule, 
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { user, userLogin } from 'src/user';
-// import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../failed-login-dialog/dialog.component';
 import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component';
@@ -20,7 +20,7 @@ export class AuthService {
 
   constructor(
     private readonly httpClient: HttpClient,
-    //private cookies: CookieService,
+    private cookies: CookieService,
     private dialog : MatDialog, 
   ) { }
 
@@ -45,7 +45,7 @@ export class AuthService {
             headers: this.headers,
           });
           const data_1 = await response.json();
-          //this.cookies.set('username', user.username);
+          this.cookies.set('username', user.username);
           //this.cookies.set('password', user.password );
           window.location.href="/home-page" 
     
@@ -66,7 +66,7 @@ export class AuthService {
        })
        .then(() => {
          console.log('Success!');
-         //window.location.href="/login" 
+         window.location.href="/login" 
          this.showVerifyialog();
        })
        .catch((error) => {
@@ -77,7 +77,7 @@ export class AuthService {
      }
    
      logout() : void { 
-       //this.cookies.delete ('username');
+       this.cookies.delete ('username');
        //this.cookies.delete('password');
        //this.cookies.delete('selectedRole');
        //this.userSubject.next();
