@@ -5,7 +5,7 @@ import { user, userLogin } from 'src/user';
 import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../failed-login-dialog/dialog.component';
-import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component';
+import { RegisterVerifyDialogComponent } from '../register-verify-dialog/register-verify-dialog.component';
 
 @Injectable({
   providedIn: 'root'
@@ -66,8 +66,8 @@ export class AuthService {
        })
        .then(() => {
          console.log('Success!');
-         window.location.href="/login" 
-         this.showVerifyialog();
+         //window.location.href="/login" 
+         this.showRegisterVerifyialog();
        })
        .catch((error) => {
          console.error('Error:' , error);
@@ -107,8 +107,8 @@ export class AuthService {
         this.dialog.open(DialogComponent);
       }
 
-      showVerifyialog(): void {
-        this.dialog.open(VerifyDialogComponent);
+      showRegisterVerifyialog(): void {
+        this.dialog.open(RegisterVerifyDialogComponent);
       }
 
       sendPasswordResetEmail(email: string) {

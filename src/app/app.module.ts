@@ -23,10 +23,10 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './failed-login-dialog/dialog.component';
 import {MatInputModule} from '@angular/material/input';
-import { VerifyDialogComponent } from './verify-dialog/verify-dialog.component';
 import { PasswordChangeComponent } from './password-change-dialog/password-change.component';
 import { CookieService } from 'ngx-cookie-service';
 import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
+import { RegisterVerifyDialogComponent } from './register-verify-dialog/register-verify-dialog.component';
 
 
 @NgModule({
@@ -38,9 +38,9 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
     RentPageComponent,
     BookDetailComponent,
     DialogComponent,
-    VerifyDialogComponent,
     PasswordChangeComponent,
-    PasswordResetFormComponent
+    PasswordResetFormComponent,
+    RegisterVerifyDialogComponent
   ],
   imports: [
     BrowserModule,
