@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { PasswordChangeComponent } from './password-change-dialog/password-change.component';
+import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 
 const routes: Routes = [
   
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'rent-page', component: RentPageComponent },
   { path: 'book-detail', component: BookDetailComponent },
-  { path: 'password-change', component: PasswordChangeComponent },
+  { path: 'password-change-dialog', component: PasswordChangeComponent },
+  { path: 'password-reset-form', component: PasswordResetFormComponent },
 ]
 
 @NgModule({

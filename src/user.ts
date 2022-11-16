@@ -40,3 +40,12 @@ export class resendMail {
        email: string,
    ) {  }
 }
+
+export class changePassword {
+   password: string;
+
+   constructor(
+       password: string,
+   ) {  }
+}
+

@@ -14,7 +14,7 @@ import { VerifyDialogComponent } from '../verify-dialog/verify-dialog.component'
 export class AuthService {
 
   headers = new Headers();
-  //authString: string;
+  authString: string;
   users : user[] = [];
   username!: string;
 
@@ -24,10 +24,10 @@ export class AuthService {
     private dialog : MatDialog, 
   ) { }
 
-    //   getToken(): string {
-    //     const authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
-    //     return 'Basic ' + btoa(authString);
-    //   }
+      getToken(): string {
+        const authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
+        return 'Basic ' + btoa(authString);
+      }
 
     //   isLoggedIn(): boolean {
     //     return !!(this.cookies.get('username') && this.cookies.get('password'));
@@ -40,7 +40,7 @@ export class AuthService {
         this.headers.set('Authorization', 'Basic ' + btoa(authString))
     
         try {
-          const response = await fetch('http://localhost:8080/users', {
+          const response = await fetch('http://localhost:8080/login', {
             method: 'GET',
             headers: this.headers,
           });
@@ -83,6 +83,25 @@ export class AuthService {
        //this.userSubject.next();
        location.reload();
      }
+
+  //    changePassword( password : string){
+
+  //     fetch('http://localhost:8080/api/auth/change/password/' + password, {
+  //       method: 'PUT',
+  //       headers: new Headers({
+  //         'Content-Type': "application/json; charset=utf8",
+  //     }),
+  //   })
+  //   .then(() => {
+  //     console.log('Success!');
+  //     window.location.href="/login"
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error:' , error);
+  //     alert("faileeedddd")
+  //   });
+
+  // }
 
       showFailDialog(): void {
         this.dialog.open(DialogComponent);
