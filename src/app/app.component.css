@@ -25,3 +25,12 @@ li {
     height: auto;
 }
 
+#user-indicator{
+    color: white;
+    display: flex;
+    border-radius: 10px;
+} 
+
+#loggedUser{
+    margin-top: 10px;
+}
