@@ -7,6 +7,7 @@ import { RentPageComponent } from './rent-page/rent-page.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { PasswordChangeComponent } from './password-change-dialog/password-change.component';
 import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'password-change-dialog', component: PasswordChangeComponent },
   { path: 'password-reset-form', component: PasswordResetFormComponent },
+  { path: 'user-profile', component: UserProfileComponent },
 ]
 
 @NgModule({

@@ -27,6 +27,7 @@ import { PasswordChangeComponent } from './password-change-dialog/password-chang
 import { CookieService } from 'ngx-cookie-service';
 import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 import { RegisterVerifyDialogComponent } from './register-verify-dialog/register-verify-dialog.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { RegisterVerifyDialogComponent } from './register-verify-dialog/register
     DialogComponent,
     PasswordChangeComponent,
     PasswordResetFormComponent,
-    RegisterVerifyDialogComponent
+    RegisterVerifyDialogComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

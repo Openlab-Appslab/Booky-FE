@@ -26,7 +26,7 @@
         <li class="nav-item">
 
           <a routerLink="/home-page"  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-            <i class="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Home</span>
+            	<span class="ml-2"> Home </span>
 			<mat-icon class="icons">home</mat-icon>
           </a>
 
@@ -35,8 +35,8 @@
         <li class="nav-item">
 
           <a routerLink="/rent-page"  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-            <i class="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Rent</span>
-			<img class="icons" src="https://img.icons8.com/material/24/FFFFFF/bookmark.png"/>
+				<span class="ml-2"> Rent </span>
+				<img class="icons" src="https://img.icons8.com/material/24/FFFFFF/bookmark.png"/>
           </a>
 
         </li>
@@ -44,8 +44,8 @@
         <li class="nav-item">
 
           <button *ngIf="!loggedInUsername"  routerLink="/login" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-            <i class="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Login </span>
-			<mat-icon class="icons">person</mat-icon>
+				<span class="ml-2"> Login </span>
+				<mat-icon class="icons">person</mat-icon>
 		  </button>
 
         </li>
@@ -53,8 +53,8 @@
 		<li class="nav-item"> 
 
 			<button *ngIf="loggedInUsername" (click)="onlogout()" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-				<i class="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Logout </span>
-				<mat-icon class="icons">exit_to_app</mat-icon>
+					<span class="ml-2"> Logout </span>
+					<mat-icon class="icons">exit_to_app</mat-icon>
 			</button>
 
 		</li>
@@ -62,9 +62,9 @@
 
 		<li *ngIf="loggedInUsername" id="user-indicator" class="nav-item">
 
-			<button routerLink="/login" class="px-3 py-2 flex items-center text-xs font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-				<i class="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">{{loggedInUsername}}  </span>
-				<mat-icon class="icons">person</mat-icon>
+			<button routerLink="/user-profile" class="px-3 py-2 flex items-center text-xs font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+					<span class="ml-2"> {{loggedInUsername}} </span>
+					<mat-icon class="icons">person</mat-icon>
 			</button>
 			
 		</li>
