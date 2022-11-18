@@ -7,7 +7,7 @@
     <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
 
 
-	  <img id="logo" src="../assets/images/booky-logo3.png" alt="ff">
+	  <img id="logo" src="../assets/images/booky-logo-owl.png" alt="ff">
 
       <button id="butš" class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
 		<i> <mat-icon>menu</mat-icon> </i>
@@ -34,7 +34,7 @@
 
         <li class="nav-item">
 
-          <a routerLink="/rent-page"  class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+          <a routerLink="/rent-page" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
 				<span class="ml-2"> Rent </span>
 				<img class="icons" src="https://img.icons8.com/material/24/FFFFFF/bookmark.png"/>
           </a>
@@ -43,7 +43,7 @@
 
         <li class="nav-item">
 
-          <button *ngIf="!loggedInUsername"  routerLink="/login" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+          <button *ngIf="!loggedInUsername" routerLink="/login" class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
 				<span class="ml-2"> Login </span>
 				<mat-icon class="icons">person</mat-icon>
 		  </button>
@@ -62,7 +62,7 @@
 
 		<li *ngIf="loggedInUsername" id="user-indicator" class="nav-item">
 
-			<button routerLink="/user-profile" class="px-3 py-2 flex items-center text-xs font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+			<button routerLink="/user-profile" id="button-user" class="px-3 py-2 flex items-center text-xs font-bold leading-snug text-white hover:opacity-75" href="#pablo">
 					<span class="ml-2"> {{loggedInUsername}} </span>
 					<mat-icon class="icons">person</mat-icon>
 			</button>
@@ -88,7 +88,7 @@
 	<footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
 		<div class="sm:flex sm:items-center sm:justify-between">
 			<a href="#" target="_blank" class="flex items-center mb-4 sm:mb-0">
-				<img src="../assets/images/booky-logo.png" class="mr-3 h-10" />
+				<img id="logo-small" src="../assets/images/booky-owl-small.png" class="mr-3 h-10" />
 				<span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Booky</span>
 			</a>
 			<ul class="flex flex-wrap items-center mb-6 sm:mb-0">

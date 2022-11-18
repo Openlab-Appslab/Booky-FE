@@ -21,16 +21,24 @@ li {
 
 #logo {
     width: 100%;
-    max-width: 150px;
+    max-width: 95px;
     height: auto;
+}
+
+#logo-small {
+    margin-right: -5px;
 }
 
 #user-indicator{
     color: white;
     display: flex;
-    border-radius: 10px;
+    border: none;
 } 
 
 #loggedUser{
     margin-top: 10px;
+}
+
+#user-indicator:focus {
+    border: none;
 }
