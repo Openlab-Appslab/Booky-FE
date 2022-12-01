@@ -23,7 +23,7 @@
         <h2 class="mb-12 text-center text-50xl text-gray-900 font-bold md:text-40xl">Rent a book</h2>
         
           <section class="min-h-screen body-font text-gray-600 ">
-            <div class="container mx-auto px-5 py-10">
+            <div class="container mx-auto px-5 py-10" *ngFor="let book of books">
               <div class="-m-4 flex flex-wrap">
 
                 <div id="card" class="w-full p-2 md:w-1/2 lg:w-1/4">
@@ -32,68 +32,14 @@
                     <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="https://dummyimage.com/420x260" />
                   </a>
                   <div class="mt-4">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">AUTHOR</h3>
-                    <h2 class="title-font text-lg font-medium text-gray-900">Book name</h2>
-                    <div id="container"> <p id="date" class="mt-1">01/09/2022</p> <!-- medzera --> <button id="detail-btn" mat-button routerLink="/book-detail"> Details <mat-icon id="icon">info</mat-icon> </button> </div>
+                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">{{book.author}}</h3>
+                    <h2 class="title-font text-lg font-medium text-gray-900">{{book.title}}</h2>
+                    <div id="container"> <p id="date" class="mt-1">{{book.price}}</p> <!-- medzera --> <button id="detail-btn" mat-button routerLink="/book-detail"> Details <mat-icon id="icon">info</mat-icon> </button> </div>
                   </div>
                   </div>
                 </div>
 
-                <div id="card" class="w-full p-2 md:w-1/2 lg:w-1/4">
-                  <div id="background"> 
-                  <a class="relative block h-48 overflow-hidden rounded">
-                    <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="https://dummyimage.com/420x260" />
-                  </a>
-                  <div class="mt-4">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">AUTHOR</h3>
-                    <h2 class="title-font text-lg font-medium text-gray-900">Book name</h2>
-                    <div id="container"> <p id="date" class="mt-1">01/09/2022</p> <!-- medzera --> <button id="detail-btn" mat-button routerLink="/book-detail"> Details <mat-icon id="icon">info</mat-icon> </button> </div>
-                  </div>
-                  </div>
-                </div>
-
-                <div id="card" class="w-full p-2 md:w-1/2 lg:w-1/4">
-                  <div id="background"> 
-                  <a class="relative block h-48 overflow-hidden rounded">
-                    <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="https://dummyimage.com/420x260" />
-                  </a>
-                  <div class="mt-4">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">AUTHOR</h3>
-                    <h2 class="title-font text-lg font-medium text-gray-900">Book name</h2>
-                    <div id="container"> <p id="date" class="mt-1">01/09/2022</p> <!-- medzera --> <button id="detail-btn" mat-button routerLink="/book-detail"> Details <mat-icon id="icon">info</mat-icon> </button> </div>
-                  </div>
-                  </div>
-                </div>
-
-                <div id="card" class="w-full p-2 md:w-1/2 lg:w-1/4">
-                  <div id="background"> 
-                  <a class="relative block h-48 overflow-hidden rounded">
-                    <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="https://dummyimage.com/420x260" />
-                  </a>
-                  <div class="mt-4">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">AUTHOR</h3>
-                    <h2 class="title-font text-lg font-medium text-gray-900">Book name</h2>
-                    <div id="container"> <p id="date" class="mt-1">01/09/2022</p> <!-- medzera --> <button id="detail-btn" mat-button routerLink="/book-detail"> Details <mat-icon id="icon">info</mat-icon> </button> </div>
-                  </div>
-                  </div>
-                </div>
-
-                <div id="card" class="w-full p-2 md:w-1/2 lg:w-1/4">
-                  <div id="background"> 
-                  <a class="relative block h-48 overflow-hidden rounded">
-                    <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="https://dummyimage.com/420x260" />
-                  </a>
-                  <div class="mt-4">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">AUTHOR</h3>
-                    <h2 class="title-font text-lg font-medium text-gray-900">Book name</h2>
-                    <div id="container"> <p id="date" class="mt-1">01/09/2022</p> <!-- medzera --> <button id="detail-btn" mat-button routerLink="/book-detail"> Details <mat-icon id="icon">info</mat-icon> </button> </div>
-                  </div>
-                  </div>
-                </div>
-
-                
-            
-              
+        
             </div>
 
-</div>
+          </div>

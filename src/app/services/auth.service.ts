@@ -128,6 +128,22 @@ export class AuthService {
         alert("faileeedddd")
       });
   
+    }
+    
+    verifyUser(username: string, code:string) {
+
+      fetch('http://localhost:8080/verify/' +username + '?code=' +code, {
+       method: 'GET',
+      })
+
+      .then(() => {
+        console.log('Success!');
+      })
+      .catch((error) => {
+        console.error('Error:' , error);
+      });
+  
     } 
+
 
 }
