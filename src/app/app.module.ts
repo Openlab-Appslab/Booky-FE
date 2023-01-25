@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -63,6 +64,7 @@ import { VerifyPageComponent } from './verify-page/verify-page.component';
     RouterModule, 
     MatDialogModule,
     MatInputModule, 
+    MatTabsModule, 
     
   ],
   providers: [CookieService],

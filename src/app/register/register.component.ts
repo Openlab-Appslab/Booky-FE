@@ -14,6 +14,9 @@ export class RegisterComponent implements OnInit {
   email: any = '';
   confirmPassword: any ;
 
+  hide = true;
+  hide2= true;
+
   users: user[] = [];
 
   model = new user( '', '','' );
@@ -29,4 +32,9 @@ export class RegisterComponent implements OnInit {
     this.registerService.createUser(this.model)
     console.log(this.model);
   }
+
+  get isPasswordEqual() {
+    return this.model.password === this.confirmPassword;
+  }
+  
 }

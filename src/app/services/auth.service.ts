@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../failed-login-dialog/dialog.component';
 import { RegisterVerifyDialogComponent } from '../register-verify-dialog/register-verify-dialog.component';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,7 @@ export class AuthService {
     private readonly httpClient: HttpClient,
     private cookies: CookieService,
     private dialog : MatDialog, 
+    private router: Router, 
   ) { }
 
       getToken(): string {
@@ -33,28 +35,34 @@ export class AuthService {
     //     return !!(this.cookies.get('username') && this.cookies.get('password'));
     //   }
 
-    async login(user: userLogin){
-
-        let authString = `${user.username}:${user.password}`
-    
-        this.headers.set('Authorization', 'Basic ' + btoa(authString))
-    
-        try {
-          const response = await fetch('http://localhost:8080/login', {
-            method: 'GET',
-            headers: this.headers,
+    async login(user: userLogin) {
+      let authString = `${user.username}:${user.password}`
+  
+      this.headers.set('Authorization', 'Basic ' + btoa(authString))
+      console.log(authString);
+  
+      try {
+        const response = await fetch('http://localhost:8080/login', {
+          method: 'GET',
+          headers: this.headers,
+        });
+        const data_1 = await response.json();
+  
+        setTimeout(() => {
+          this.router.navigateByUrl("/home-page").then(() => {
+            location.reload();
           });
-          const data_1 = await response.json();
-          this.cookies.set('username', user.username);
-          //this.cookies.set('password', user.password );
-          window.location.href="/home-page" 
-    
-        }
-         catch (error) {
-          console.log('Error:', error);
-          this.showFailDialog();
-        }
+        }, 900);
+  
+        this.cookies.set('password', user.password);
+        this.cookies.set('username', user.username );
+  
       }
+      catch (error) {
+        console.log('Error:', error);
+        this.showFailDialog();
+      }
+    }
 
       createUser (user:user) {
         fetch('http://localhost:8080/register', {
@@ -72,36 +80,36 @@ export class AuthService {
        .catch((error) => {
          console.error('Error:' , error);
          alert("faileeedddd")
-       });
+      });
    
      }
    
      logout() : void { 
        this.cookies.delete ('username');
-       //this.cookies.delete('password');
-       //this.cookies.delete('selectedRole');
+       this.cookies.delete('password');
+       this.cookies.delete('role');
        //this.userSubject.next();
        location.reload();
      }
 
-  //    changePassword( password : string){
+     changePassword( email:string, password : string){
 
-  //     fetch('http://localhost:8080/api/auth/change/password/' + password, {
-  //       method: 'PUT',
-  //       headers: new Headers({
-  //         'Content-Type': "application/json; charset=utf8",
-  //     }),
-  //   })
-  //   .then(() => {
-  //     console.log('Success!');
-  //     window.location.href="/login"
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error:' , error);
-  //     alert("faileeedddd")
-  //   });
+      fetch('http://localhost:8080/changePassword/'+ email + "/" + password, {
+        method: 'PUT',
+        headers: new Headers({
+          'Content-Type': "application/json; charset=utf8",
+      }),
+    })
+    .then(() => {
+      console.log('passw reset Success!');
+      //window.location.href="/login"
+    })
+    .catch((error) => {
+      console.error('Error:' , error);
+      alert("faileeedddd")
+    });
 
-  // }
+  }
 
       showFailDialog(): void {
         this.dialog.open(DialogComponent);
@@ -113,7 +121,7 @@ export class AuthService {
 
       sendPasswordResetEmail(email: string) {
 
-        fetch('http://localhost:8080/password/forgot/' + email, {
+        fetch('http://localhost:8080/changePasswordEmail/' + email, {
           method: 'GET',
           headers: new Headers({
             'Content-Type': "application/json; charset=utf8",
@@ -129,21 +137,23 @@ export class AuthService {
       });
   
     }
-    
-    verifyUser(username: string, code:string) {
-
-      fetch('http://localhost:8080/verify/' +username + '?code=' +code, {
-       method: 'GET',
-      })
-
-      .then(() => {
-        console.log('Success!');
-      })
-      .catch((error) => {
-        console.error('Error:' , error);
-      });
   
-    } 
+    verifyUser(code: string) {
 
+      fetch('http://localhost:8080/verify/' + code , {
+        method: 'GET',
+        headers: new Headers({
+          'Content-Type': "application/json; charset=utf8",
+      }),
+    })
+    .then(() => {
+      console.log('verify Success!');
+    })
+    .catch((error) => {
+      console.error('Error:' , error);
+      alert("faileeedddd")
+    });
+
+  }
 
 }

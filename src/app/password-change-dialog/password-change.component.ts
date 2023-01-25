@@ -15,6 +15,8 @@ export class PasswordChangeComponent implements OnInit {
 
   email: string = '';
 
+  send : boolean = false
+
   model = new sentMail('');
 
   ngOnInit(): void {}
@@ -22,6 +24,7 @@ export class PasswordChangeComponent implements OnInit {
   onSubmit() {
     this.authService.sendPasswordResetEmail(this.model.email);
     console.log(this.model.email);
+    this.send = true;
   }
 
 }

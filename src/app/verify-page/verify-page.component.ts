@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class VerifyPageComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private route: ActivatedRoute,
   ) { 
     this.verifyUserV();
   }
@@ -20,8 +22,9 @@ export class VerifyPageComponent implements OnInit {
   ngOnInit(): void {
   }
    verifyUserV() {
-    this.authService.verifyUser(this.username, this.code);
-    //console.log(this.username);
-    
+    this.code =String(this.route.snapshot.paramMap.get('code'));
+
+    this.authService.verifyUser(this.code);
   } 
+  
 }

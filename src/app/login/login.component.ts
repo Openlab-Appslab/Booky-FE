@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
 
   model = new userLogin( '', '');
 
+  hide = true;
+
   constructor(
     private readonly loginService: AuthService,
     private dialog : MatDialog, 
@@ -24,7 +26,9 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit() {
-    this.loginService.login(this.model);
+    this.loginService.login(this.model).then(()=>{
+      location.reload();
+    });
     console.log(this.model);
   }
 

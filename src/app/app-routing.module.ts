@@ -19,9 +19,9 @@ const routes: Routes = [
   { path: 'rent-page', component: RentPageComponent },
   { path: 'book-detail', component: BookDetailComponent },
   { path: 'password-change-dialog', component: PasswordChangeComponent },
-  { path: 'password-reset-form', component: PasswordResetFormComponent },
+  { path: 'changePassword/:email', component: PasswordResetFormComponent },
   { path: 'user-profile', component: UserProfileComponent },
-  { path: 'verify', component: VerifyPageComponent },
+  { path: 'verify/:code', component: VerifyPageComponent },
 ]
 
 @NgModule({

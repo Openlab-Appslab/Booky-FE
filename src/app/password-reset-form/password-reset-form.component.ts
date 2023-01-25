@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { changePassword } from 'src/user';
 import { AuthService } from '../services/auth.service';
 
@@ -11,6 +12,7 @@ export class PasswordResetFormComponent implements OnInit {
 
   constructor(
     private readonly loginService: AuthService,
+    private route: ActivatedRoute,
 
   ) { }
 
@@ -19,11 +21,14 @@ export class PasswordResetFormComponent implements OnInit {
 
   password: string = ''; 
   confirmPassword: any ;
+  email: string;
 
   model = new changePassword('');
   
   onSubmit() {
-    //this.loginService.login(this.model);
+    this.email =String(this.route.snapshot.paramMap.get('email'));
+
+    this.loginService.changePassword(this.email, this.model.password);
     console.log(this.model);
   }
 
