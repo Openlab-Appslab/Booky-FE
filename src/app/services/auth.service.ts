@@ -20,7 +20,7 @@ export class AuthService {
   username!: string;
 
   constructor(
-    private readonly httpClient: HttpClient,
+    private readonly http: HttpClient,
     private cookies: CookieService,
     private dialog : MatDialog, 
     private router: Router, 
@@ -31,37 +31,64 @@ export class AuthService {
         return 'Basic ' + btoa(authString);
       }
 
-    //   isLoggedIn(): boolean {
-    //     return !!(this.cookies.get('username') && this.cookies.get('password'));
-    //   }
+      isLoggedIn(): boolean {
+        return !!(this.cookies.check('username') && this.cookies.check('password'));
+        //return !!(this.cookies.get('username') && this.cookies.get('password'));
+      }
 
-    async login(user: userLogin) {
-      let authString = `${user.username}:${user.password}`
+    // async login(user: userLogin) {
+    //   let authString = `${user.username}:${user.password}`
   
-      this.headers.set('Authorization', 'Basic ' + btoa(authString))
-      console.log(authString);
+    //   this.headers.set('Authorization', 'Basic ' + btoa(authString))
+    //   console.log(authString);
   
-      try {
-        const response = await fetch('http://localhost:8080/login', {
-          method: 'GET',
-          headers: this.headers,
-        });
-        const data_1 = await response.json();
+    //   try {
+    //     const response = await fetch('http://localhost:8080/login', {
+    //       method: 'GET',
+    //       headers: this.headers,
+    //     });
+    //     const data_1 = await response.json();
   
+    //     setTimeout(() => {
+    //       this.router.navigateByUrl("/home-page").then(() => {
+    //         location.reload();
+    //       });
+    //     }, 900);
+  
+    //     this.cookies.set('password', user.password);
+    //     this.cookies.set('username', user.username );
+  
+    //   }
+    //   catch (error) {
+    //     console.log('Error:', error);
+    //     this.showFailDialog();
+    //   }
+    // }
+
+    login(username: string, password: string) {
+      
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json'
+      });
+
+      
+      const body = {
+        username,
+        password
+      };
+
+      this.http.post('http://localhost:8080/login', body, { headers })
+      .subscribe(() => {
+        this.cookies.set('username', username);
+        this.cookies.set('password', password);
         setTimeout(() => {
-          this.router.navigateByUrl("/home-page").then(() => {
-            location.reload();
-          });
-        }, 900);
-  
-        this.cookies.set('password', user.password);
-        this.cookies.set('username', user.username );
-  
-      }
-      catch (error) {
-        console.log('Error:', error);
-        this.showFailDialog();
-      }
+                this.router.navigateByUrl("/home-page").then(() => {
+                  location.reload();
+                });
+              }, 900);
+      }, error => {
+        console.error(error);
+      });
     }
 
       createUser (user:user) {
@@ -85,7 +112,7 @@ export class AuthService {
      }
    
      logout() : void { 
-       this.cookies.delete ('username');
+       this.cookies.delete('username');
        this.cookies.delete('password');
        this.cookies.delete('role');
        //this.userSubject.next();

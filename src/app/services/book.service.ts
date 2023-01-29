@@ -10,8 +10,15 @@ import { allBooks } from 'src/book';
 
 export class BookService {
   static getAllBooks() {
-      throw new Error('Method not implemented.');
+    throw new Error('Method not implemented.');
   }
+
+  authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
+
+  headerHttp = new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: 'Basic ' + btoa(this.authString)
+  });
 
   constructor(
     private readonly http: HttpClient,
@@ -19,7 +26,7 @@ export class BookService {
   ) { }
 
   getAllBooks():Observable <allBooks[]>  {
-    return this.http.get<any[]>('http://localhost:8080/books')  //posielat quiz bez question listu iba detaily... od palina 
+    return this.http.get<allBooks[]>('http://localhost:8080/books' , { headers: this.headerHttp })  //posielat quiz bez question listu iba detaily... od palina 
   }
 
 }

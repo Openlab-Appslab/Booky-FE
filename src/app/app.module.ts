@@ -30,6 +30,7 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
 import { RegisterVerifyDialogComponent } from './register-verify-dialog/register-verify-dialog.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VerifyPageComponent } from './verify-page/verify-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { VerifyPageComponent } from './verify-page/verify-page.component';
     PasswordResetFormComponent,
     RegisterVerifyDialogComponent,
     UserProfileComponent,
-    VerifyPageComponent
+    VerifyPageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { VerifyPageComponent } from './verify-page/verify-page.component';
     RouterModule, 
     MatDialogModule,
     MatInputModule, 
-    MatTabsModule, 
+    MatTabsModule,
+    ReactiveFormsModule, 
     
   ],
   providers: [CookieService],
