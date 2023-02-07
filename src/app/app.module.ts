@@ -31,6 +31,7 @@ import { RegisterVerifyDialogComponent } from './register-verify-dialog/register
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VerifyPageComponent } from './verify-page/verify-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterVerifyDialogComponent,
     UserProfileComponent,
     VerifyPageComponent,
+    CreateBookComponent,
     
   ],
   imports: [

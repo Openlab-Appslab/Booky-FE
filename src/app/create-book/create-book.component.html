@@ -1,0 +1,11 @@
+<div id="container"> 
+
+    <h1 class="title">Create book</h1>
+    <div class="inputs-fields" flex items-center justify-center h-screen>
+        <input class="input-field" type="text"  placeholder="Enter name of your book" [(ngModel)]="title"><br>
+        <input class="input-field" type="text"  placeholder="Enter author of the book" [(ngModel)]="author"><br>
+        <input class="input-field" type="text"  placeholder="Enter description of the book" [(ngModel)]="description"><br>
+        <input class="input-field" type="text"  placeholder="Enter price of the book" [(ngModel)]="price"><br>
+    </div>
+    <button class="button-field" (click)="addBook()"> save </button>
+</div>

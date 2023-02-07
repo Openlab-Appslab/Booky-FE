@@ -10,6 +10,7 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { VerifyPageComponent } from './verify-page/verify-page.component';
 import { AuthGuard } from './shared/auth.guard';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 
 const routes: Routes = [
@@ -19,13 +20,14 @@ const routes: Routes = [
   { path: 'home-page', component: HomePageComponent, canActivate:[AuthGuard],},
   { path: 'register', component: RegisterComponent },
   { path: 'rent-page', component: RentPageComponent, canActivate:[AuthGuard],},
-  { path: 'book-detail', component: BookDetailComponent, canActivate:[AuthGuard],},
+  { path: 'book-detail/:id', component: BookDetailComponent, canActivate:[AuthGuard],},
   { path: 'password-change-dialog', component: PasswordChangeComponent },
   { path: 'changePassword/:email', component: PasswordResetFormComponent },
   { path: 'user-profile', component: UserProfileComponent, canActivate:[AuthGuard],},
   { path: 'verify/:code', component: VerifyPageComponent },
   { path: 'books', component: HomePageComponent, canActivate:[AuthGuard]},
-  
+  { path: 'create-book', component: CreateBookComponent, canActivate:[AuthGuard]},
+  { path: 'save/book', component: CreateBookComponent, canActivate:[AuthGuard]},
 ]
 
 @NgModule({

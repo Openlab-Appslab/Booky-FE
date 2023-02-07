@@ -1,4 +1,5 @@
-export class allBooks {
+export class book {
+    id: number;
     title: string;
     author: string;
     description: string;

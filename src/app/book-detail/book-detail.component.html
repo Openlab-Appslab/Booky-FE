@@ -2,14 +2,15 @@
     <div class="container px-5 py-24 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <img alt="ecommerce" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg">
-        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-          <h2 class="text-sm title-font text-gray-500 tracking-widest">Author</h2>
-          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">The Catcher in the Rye</h1> 
+        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0" *ngIf="selectedBook">
+          <h2 class="text-sm title-font text-gray-500 tracking-widest">{{selectedBook.author}}</h2>
+          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{selectedBook.title}}</h1> 
           
           <div class="flex mb-4">
            
           </div>
-          <p class="leading-relaxed">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub red bottle austin listicle pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.</p>
+          <p class="leading-relaxed">{{selectedBook.description}}</p>
+          <p class="book-price"> {{selectedBook.price}}$</p>
          
           <mat-divider> </mat-divider>
           <div id="control" class="flex">
