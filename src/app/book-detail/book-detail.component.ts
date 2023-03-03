@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/book';
 import { BookService } from '../services/book.service';
+import { BookHistoryService } from '../services/bookHistory.service';
 
 @Component({
   selector: 'app-book-detail',
@@ -10,7 +11,7 @@ import { BookService } from '../services/book.service';
 })
 export class BookDetailComponent implements OnInit {
 
-  constructor(private bookService: BookService, private route: ActivatedRoute) { }
+  constructor(private bookHistoryService: BookHistoryService ,private bookService: BookService, private route: ActivatedRoute) { }
   id: number;
   selectedBook: Book;
 
@@ -21,6 +22,13 @@ export class BookDetailComponent implements OnInit {
       this.selectedBook = book;
       console.log(book);
     })
+  }
+
+  public lendBook(){
+    this.bookHistoryService.lendBook(this.selectedBook.id).subscribe((response) => {
+      console.log(response, "responsss")
+    });
+    console.log(this.selectedBook.id);
   }
 
 }
