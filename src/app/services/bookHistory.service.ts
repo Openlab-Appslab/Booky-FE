@@ -29,4 +29,8 @@ import { Observable } from "rxjs";
     lendBook(bookId): Observable<any>{
         return this.http.post(this.localhost + '/lend/' + bookId, null, {headers: this.headerHttp})
     }
+
+    returnBook(bookId): Observable<any>{
+        return this.http.put(this.localhost + '/return/' + bookId, null, {headers: this.headerHttp})
+    }
   }

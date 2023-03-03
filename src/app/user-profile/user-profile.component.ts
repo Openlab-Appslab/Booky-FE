@@ -32,4 +32,11 @@ export class UserProfileComponent implements OnInit {
       console.log(books);
     });
   }
+
+  returnBook(bookId: number){
+    this.bookHistoryService.returnBook(bookId).subscribe( (result) => {
+        console.log("returned"+ result);
+    });
+  }
+
 }
