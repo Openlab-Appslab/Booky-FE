@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { book } from 'src/book';
+import { Book } from 'src/book';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +25,8 @@ export class BookService {
     private cookies: CookieService,
   ) { }
 
-  getAllBooks():Observable <book[]>  {
-    return this.http.get<book[]>('http://localhost:8080/books' , { headers: this.headerHttp })  //posielat quiz bez question listu iba detaily... od palina 
+  getAllBooks():Observable <Book[]>  {
+    return this.http.get<Book[]>('http://localhost:8080/books' , { headers: this.headerHttp })  //posielat quiz bez question listu iba detaily... od palina 
   }
 
   addBook(book) {

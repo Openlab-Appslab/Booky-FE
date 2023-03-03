@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { book } from 'src/book';
+import { Book } from 'src/book';
 import { BookService } from '../services/book.service';
 
 @Component({
@@ -13,8 +13,8 @@ export class RentPageComponent implements OnInit {
     private bookService: BookService,
   ) { }
 
-  books: book[];
-  selectedBook: book;
+  books: Book[];
+  selectedBook: Book;
 
   ngOnInit(): void {
 

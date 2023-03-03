@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BookDetailComponent } from '../book-detail/book-detail.component';
-import { book } from 'src/book';
+import { Book } from 'src/book';
 import { BookService } from '../services/book.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-create-book',
@@ -10,12 +11,14 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent implements OnInit {
-  book: book;
+  book: Book;
   title: string;
   author: string;
   description: string;
   price: number;
   id: number;
+  userRole: any;
+  authService: AuthService;
 
   constructor(private bookService: BookService, private route: ActivatedRoute,) { }
 
@@ -37,10 +40,16 @@ export class CreateBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id =Number(this.route.snapshot.paramMap.get('id'));
-    this.bookService.getBookById(this.id)
-    .subscribe(book => {
+    //set role from httpheaders
+    console.log(this.authService.getRole());
+    this.userRole = this.authService.getRole();
+    
+    if (this.userRole == 'ADMIN') {
+      this.id =Number(this.route.snapshot.paramMap.get('id'));
+      this.bookService.getBookById(this.id)
+      .subscribe(book => {
       
-    })
+      })
+    }
   }
 }

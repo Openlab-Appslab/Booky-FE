@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { book } from 'src/book';
+import { Book } from 'src/book';
 import { BookService } from '../services/book.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class BookDetailComponent implements OnInit {
 
   constructor(private bookService: BookService, private route: ActivatedRoute) { }
   id: number;
-  selectedBook: book;
+  selectedBook: Book;
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));

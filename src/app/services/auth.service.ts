@@ -15,9 +15,15 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   headers = new Headers();
-  authString: string;
+  //authString: string;
   users : user[] = [];
   username!: string;
+
+  authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
+  headerHttp = new HttpHeaders({
+    'Content-Type': 'application/json',
+    Authorization: 'Basic ' + btoa(this.authString)
+  });
 
   constructor(
     private readonly http: HttpClient,
@@ -29,6 +35,10 @@ export class AuthService {
       getToken(): string {
         const authString = `${this.cookies.get('username')}:${this.cookies.get('password')}`
         return 'Basic ' + btoa(authString);
+      }
+
+      getRole(): Observable<any>{
+        return this.http.get('http://localhost:8080/role', { headers: this.headerHttp });
       }
 
       isLoggedIn(): boolean {
